@@ -1,22 +1,13 @@
 pragma solidity ^0.4.18;
 
 // ----------------------------------------------------------------------------
-// 'FIXED' 'Example Fixed Supply Token' token contract
-//
-// Symbol      : FIXED
-// Name        : Example Fixed Supply Token
+// Symbol      : AFC
+// Name        : AnonyFundCoin
 // Total supply: 1,000,000.000000000000000000
 // Decimals    : 18
-//
-// Enjoy.
-//
-// (c) BokkyPooBah / Bok Consulting Pty Ltd 2017. The MIT Licence.
 // ----------------------------------------------------------------------------
 
 
-// ----------------------------------------------------------------------------
-// Safe maths
-// ----------------------------------------------------------------------------
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
@@ -40,10 +31,8 @@ library SafeMath {
 }
 
 
-// ----------------------------------------------------------------------------
 // ERC Token Standard #20 Interface
 // https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20-token-standard.md
-// ----------------------------------------------------------------------------
 contract ERC20Interface {
     function totalSupply() public constant returns (uint);
 
@@ -62,19 +51,14 @@ contract ERC20Interface {
 }
 
 
-// ----------------------------------------------------------------------------
 // Contract function to receive approval and execute function in one call
-//
 // Borrowed from MiniMeToken
-// ----------------------------------------------------------------------------
 contract ApproveAndCallFallBack {
     function receiveApproval(address from, uint256 tokens, address token, bytes data) public;
 }
 
 
-// ----------------------------------------------------------------------------
 // Owned contract
-// ----------------------------------------------------------------------------
 contract Owned {
     address public owner;
     address public newOwner;
@@ -103,10 +87,6 @@ contract Owned {
 }
 
 
-// ----------------------------------------------------------------------------
-// ERC20 Token, with the addition of symbol, name and decimals and an
-// initial fixed supply
-// ----------------------------------------------------------------------------
 contract AnonyFundCoin is ERC20Interface, Owned {
     using SafeMath for uint;
 
